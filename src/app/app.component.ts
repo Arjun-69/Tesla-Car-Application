@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AsyncPipe, CommonModule, JsonPipe } from '@angular/common';
 import { STEP1, STEP2, STEP3 } from './shared/constant/common.constant';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { SharedDataService } from './shared/shared-data.service';
 
 @Component({

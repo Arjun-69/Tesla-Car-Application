@@ -18,7 +18,7 @@ const handlers = [
           {id: 2, description: "Plaid - Tri Motor All-Wheel Drive", range: 396, speed: 200, price: 89990},
         ],
         towHitch: true,
-        yoke: true
+        yoke: false
       },
       "X": {
         configs: [
@@ -43,8 +43,8 @@ const handlers = [
           {id: 2, description: "Long Range - Dual Motor All-Wheel Drive", range: 333, speed: 145, price: 45990},
           {id: 3, description: "Performance - Dual Motor All-Wheel Drive", range: 315, speed: 162, price: 50990},
         ],
-        towHitch: true,
-        yoke: true,
+        towHitch: false,
+        yoke: false,
       },
       "Y": {
         configs: [
@@ -53,7 +53,7 @@ const handlers = [
           {id: 3, description: "Performance - Dual Motor All-Wheel Drive", range: 303, speed: 155, price: 52490},
         ],
         towHitch: true,
-        yoke: true,
+        yoke: false,
       }
     };
     // @ts-ignore

@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<div *ngIf="includeYoke || includeTowHitchAvailable" class="row">
+
     <div class="col-md-6">
         <div *ngIf="includeTowHitchAvailable" class="form-group">
             <div class="form-check">
@@ -42,14 +42,13 @@
         </div>
 
         <div class="form-check">
-            <label class="form-check-label" for="includeYoke">{{yokeSteeringWheel}}?</label>
+            <label class="form-check-label" for="includeYokeAvailable">{{yokeSteeringWheel}}?</label>
             <input type="checkbox" class="form-check-input" (change)="setSelectedModel()" id="includeYoke"
                 [(ngModel)]="includeYoke">
         </div>
 
 
     </div>
-</div>
 
 <div class="container" *ngIf="imageSelected">
     <app-car-view [carImageUrl]="imageSelected"></app-car-view>
