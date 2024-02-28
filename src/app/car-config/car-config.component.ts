@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CHOOSE_DROPDOWN, CONFIG, COST, MAX_SPEED, MILES, RANGE, SELECT_CONFIG_TEXT, STEP2, TOWHITCH, YOKE_STEERING_WHEEL } from '../shared/constant/common.constant';
 import { SelectedModel } from '../shared/models/carSummary.model';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-car-config',
@@ -55,8 +56,15 @@ export class CarConfigComponent {
 
   constructor(
     private carDataService: CarDataService,
-    private sharedDataService: SharedDataService
-  ) { }
+    private sharedDataService: SharedDataService,
+    private router: Router
+  ) {
+    this.router.events.subscribe((event)=>{
+      if(event instanceof NavigationEnd && event.urlAfterRedirects === "/car-config"){
+        this.sharedDataService.setStep3Status(false);
+      }
+    })
+   }
 
   ngOnInit(): void {
     this.selectedModelSubscription = this.sharedDataService
@@ -121,6 +129,7 @@ export class CarConfigComponent {
     this.setSelectedModel();
     //enable the step3 logic
     this.sharedDataService.setStep2Status(true);
+    this.sharedDataService.setStep3Status(true);
   }
 
   //update data for step3
