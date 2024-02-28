@@ -20,8 +20,13 @@ export class AppComponent {
   step2Status = false;
   step3Status = false;
 
-  constructor(private sharedDataService: SharedDataService) {
-
+  constructor(private sharedDataService: SharedDataService, private router: Router) {
+    this.router.events.subscribe((event)=>{
+      if(event instanceof NavigationEnd && event.urlAfterRedirects === "/car-model"){
+        this.sharedDataService.setStep2Status(false);
+        this.sharedDataService.setStep3Status(false);
+      }
+    })
   }
 
   ngOnInit(): void {
