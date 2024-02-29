@@ -17,8 +17,8 @@ const handlers = [
           {id: 1, description: "Dual Motor All-Wheel Drive", range: 405, speed: 149, price: 74990},
           {id: 2, description: "Plaid - Tri Motor All-Wheel Drive", range: 396, speed: 200, price: 89990},
         ],
-        towHitch: true,
-        yoke: false
+        towHitch: false,
+        yoke: true
       },
       "X": {
         configs: [
